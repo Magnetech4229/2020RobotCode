@@ -11,6 +11,7 @@
 
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 /**
@@ -44,6 +45,7 @@ public class TeleopDrive extends Command {
     @Override
     protected void execute() {
         Robot.driveTrain.drive(Robot.oi.leftJoystick.getY(), Robot.oi.rightJoystick.getY());
+        SmartDashboard.putNumber("", 0); // Andrew stopped here
     }
 
     // Make this return true when this Command no longer needs to run execute()
