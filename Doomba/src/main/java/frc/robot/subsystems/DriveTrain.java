@@ -128,7 +128,7 @@ public class DriveTrain extends Subsystem {
      * @param rightSpeed speed of the right set of wheels
      */
     public void drive(double leftSpeed, double rightSpeed) {
-        differentialDrive1.tankDrive(leftSpeed, rightSpeed);
+        differentialDrive1.tankDrive(leftSpeed * -0.7, rightSpeed * -0.7);
     }
 }
 
