@@ -49,10 +49,14 @@ public class TeleopDrive extends Command {
     @Override
     protected void execute() {
         Robot.driveTrain.drive(Robot.oi.leftJoystick.getY(), Robot.oi.rightJoystick.getY());
-        SmartDashboard.putNumber("Front Left Encoder Position", Robot.driveTrain.frontLeftEncoder.getPosition());
-        SmartDashboard.putNumber("Front Right Encoder Position", -Robot.driveTrain.frontRightEncoder.getPosition());
-        SmartDashboard.putNumber("Back Left Encoder Position", Robot.driveTrain.backLeftEncoder.getPosition());
-        SmartDashboard.putNumber("Back Right Encoder Position", -Robot.driveTrain.backRightEncoder.getPosition());
+        SmartDashboard.putNumber("Encoder Position - FL", Robot.driveTrain.frontLeftEncoder.getPosition());
+        SmartDashboard.putNumber("Speed - FL", Robot.driveTrain.frontLeftController.get());
+        SmartDashboard.putNumber("Encoder Position - FR", -Robot.driveTrain.frontRightEncoder.getPosition());
+        SmartDashboard.putNumber("Speed - FR", Robot.driveTrain.frontRightController.get());
+        SmartDashboard.putNumber("Encoder Position - BL", Robot.driveTrain.backLeftEncoder.getPosition());
+        SmartDashboard.putNumber("Speed - BL", Robot.driveTrain.backLeftController.get());
+        SmartDashboard.putNumber("Encoder Position - BR", -Robot.driveTrain.backRightEncoder.getPosition());
+        SmartDashboard.putNumber("Speed - BR", Robot.driveTrain.backRightController.get());
     }
 
     // Make this return true when this Command no longer needs to run execute()
