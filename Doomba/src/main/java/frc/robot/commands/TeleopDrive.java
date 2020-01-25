@@ -39,13 +39,20 @@ public class TeleopDrive extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+        Robot.driveTrain.frontLeftEncoder.setPosition(0);
+        Robot.driveTrain.frontRightEncoder.setPosition(0);
+        Robot.driveTrain.backLeftEncoder.setPosition(0);
+        Robot.driveTrain.backRightEncoder.setPosition(0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
         Robot.driveTrain.drive(Robot.oi.leftJoystick.getY(), Robot.oi.rightJoystick.getY());
-        SmartDashboard.putNumber("", 0); // Andrew stopped here
+        SmartDashboard.putNumber("Front Left Encoder Position", Robot.driveTrain.frontLeftEncoder.getPosition());
+        SmartDashboard.putNumber("Front Right Encoder Position", -Robot.driveTrain.frontRightEncoder.getPosition());
+        SmartDashboard.putNumber("Back Left Encoder Position", Robot.driveTrain.backLeftEncoder.getPosition());
+        SmartDashboard.putNumber("Back Right Encoder Position", -Robot.driveTrain.backRightEncoder.getPosition());
     }
 
     // Make this return true when this Command no longer needs to run execute()
