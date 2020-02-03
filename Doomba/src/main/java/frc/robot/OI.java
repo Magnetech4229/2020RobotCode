@@ -34,7 +34,7 @@ public class OI {
     // commands the same as any other Button.
 
     //// TRIGGERING COMMANDS WITH BUTTONS
-    // Once you have a button, it's trivial to bind it to a button in one of
+    // Once you have a button, it's trivial to bind it to a command in one of
     // three ways:
 
     // Start the command when the button is pressed and let it run the command
