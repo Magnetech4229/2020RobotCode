@@ -3,6 +3,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
+import frc.robot.subsystems.DriveTrain;
 
 public class TestCommand extends Command {
 
@@ -28,6 +29,7 @@ public class TestCommand extends Command {
         @Override
         protected void execute() {
             SmartDashboard.putBoolean("Button", true);
+            Robot.driveTrain.drive(1, -1);
         }
     
         // Make this return true when this Command no longer needs to run execute()
@@ -46,5 +48,6 @@ public class TestCommand extends Command {
         // subsystems is scheduled to run
         @Override
         protected void interrupted() {
+            end();
         }
 }
