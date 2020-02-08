@@ -30,6 +30,8 @@ public class TestCommand extends Command {
         protected void execute() {
             SmartDashboard.putBoolean("Button", true);
             Robot.driveTrain.drive(1, -1);
+
+            SmartDashboard.putNumber("Blue", 2);
         }
     
         // Make this return true when this Command no longer needs to run execute()
