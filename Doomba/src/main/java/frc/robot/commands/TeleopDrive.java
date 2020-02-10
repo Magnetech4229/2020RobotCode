@@ -8,8 +8,10 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package frc.robot.commands;
+
+import org.usfirst.Rotoraptors.controls.hids.XboxController;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
@@ -43,7 +45,8 @@ public class TeleopDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.driveTrain.drive(Robot.oi.leftJoystick.getY(), Robot.oi.rightJoystick.getY());
+       // Robot.driveTrain.drive(Robot.oi.leftJoystick.getY(), Robot.oi.rightJoystick.getY());
+        Robot.driveTrain.drive(Robot.oi.xbox.getLeftX(), Robot.oi.xbox.getRightY());
     }
 
     // Make this return true when this Command no longer needs to run execute()
