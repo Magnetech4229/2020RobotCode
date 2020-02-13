@@ -43,7 +43,7 @@ public class IntakeNegativeSpin extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.intake.spinIntake(-0.8);
+        Robot.intake.spinIntake(-0.4);
     }
 
     // Make this return true when this Command no longer needs to run execute()
