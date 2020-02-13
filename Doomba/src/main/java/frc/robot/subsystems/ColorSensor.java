@@ -1,7 +1,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+//import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ColorTest;
 
@@ -15,9 +15,8 @@ public class ColorSensor extends Subsystem {
     private ColorSensorV3 color;
 
     public ColorSensor() {
-
-      color = new ColorSensorV3 (Port.kMXP); 
-      SmartDashboard.putNumber("Blue", color.getBlue());
+      color = new ColorSensorV3(Port.kOnboard);
+      //SmartDashboard.putString("say","different");
 
    }
 
@@ -26,8 +25,9 @@ public class ColorSensor extends Subsystem {
       setDefaultCommand(new ColorTest());
    }
 
-   public int getBlue() {
-      color.getBlue();
-      return 255;
+   public int readBlue() {
+      color.getColor();
+      //SmartDashboard.putString("Write", "readBlue");
+      return color.getBlue();
    }
 }
