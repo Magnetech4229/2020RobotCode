@@ -12,6 +12,7 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 /**
@@ -39,13 +40,26 @@ public class TeleopDrive extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+        Robot.driveTrain.frontLeftEncoder.setPosition(0);
+        Robot.driveTrain.frontRightEncoder.setPosition(0);
+        Robot.driveTrain.backLeftEncoder.setPosition(0);
+        Robot.driveTrain.backRightEncoder.setPosition(0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
         Robot.driveTrain.drive(Robot.oi.xbox.getY(Hand.kLeft), Robot.oi.xbox.getY(Hand.kRight));
+        SmartDashboard.putNumber("Encoder Position - FL", Robot.driveTrain.frontLeftEncoder.getPosition());
+        SmartDashboard.putNumber("Speed - FL", Robot.driveTrain.frontLeftController.get());
+        SmartDashboard.putNumber("Encoder Position - FR", -Robot.driveTrain.frontRightEncoder.getPosition());
+        SmartDashboard.putNumber("Speed - FR", Robot.driveTrain.frontRightController.get());
+        SmartDashboard.putNumber("Encoder Position - BL", Robot.driveTrain.backLeftEncoder.getPosition());
+        SmartDashboard.putNumber("Speed - BL", Robot.driveTrain.backLeftController.get());
+        SmartDashboard.putNumber("Encoder Position - BR", -Robot.driveTrain.backRightEncoder.getPosition());
+        SmartDashboard.putNumber("Speed - BR", Robot.driveTrain.backRightController.get());
     }
+    
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
