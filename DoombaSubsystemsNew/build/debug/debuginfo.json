@@ -1,9 +1,0 @@
-[
-  {
-    "artifact": "frcJava (in project DoombaSubsystemsNew)",
-    "target": "roborio",
-    "debugfile": "frcJava_roborio.debugconfig",
-    "project": "DoombaSubsystemsNew",
-    "language": "java"
-  }
-]
