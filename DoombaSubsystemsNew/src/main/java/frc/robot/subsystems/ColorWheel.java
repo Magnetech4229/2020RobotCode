@@ -20,7 +20,7 @@ private WPI_VictorSPX wheelMotor;
 
 
 public ColorWheel(){
-  wheelMotor = new WPI_VictorSPX(5);
+  wheelMotor = new WPI_VictorSPX(13);
 }
 
 
