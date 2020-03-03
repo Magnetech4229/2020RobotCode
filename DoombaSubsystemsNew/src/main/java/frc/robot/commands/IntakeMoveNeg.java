@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 public class IntakeMoveNeg extends Command {
@@ -20,6 +21,7 @@ public class IntakeMoveNeg extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -38,6 +40,7 @@ public class IntakeMoveNeg extends Command {
   @Override
   protected void end() {
     Robot.intake.moveIntake(0);
+    
   }
 
   // Called when another command which requires one or more of the same

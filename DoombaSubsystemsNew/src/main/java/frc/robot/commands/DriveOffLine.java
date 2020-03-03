@@ -4,10 +4,13 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.WaitCommand;
 import edu.wpi.first.wpilibj.command.WaitUntilCommand;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj.Timer;
 
-
+/**
+ * Basic autonomous command using timers. Doesn't use encoders, but should drive forward and shoot 3 balls.
+ */
 public class DriveOffLine extends Command {
 
     Timer timer;
@@ -18,9 +21,10 @@ public class DriveOffLine extends Command {
      */
     @Override
     protected void initialize() { 
-        Robot.driveTrain.drive(0, 0);
+        //Robot.driveTrain.drive(0, 0);
         timer = new Timer();
         timer.start();
+        SmartDashboard.putNumber("Auto Timer (Debug)", timer.get());
 
 
 
@@ -32,35 +36,24 @@ public class DriveOffLine extends Command {
     @Override
     protected void execute() {
 
-        while (timer.get() <= 1){
+        //Drives forward
 
-            Robot.driveTrain.drive(.5,.5);
+        if (timer.get() <= 1){
+
+            Robot.driveTrain.drive(-.5,-.5);
 
         }
 
-        timer.reset();
+        //Spins up the shooter and shoots three power cells
 
-        while (timer.get() <= 4.5){
+        if (timer.get() <= 4.5){
 
-            Robot.launcher.spinLauncher(-1);
+            Robot.launcher.spinLauncher(1);
             if (timer.get() > 3){
 
                 Robot.powerCellStorage.spinStorage(0.5);
             }
 
-        timer.reset();
-
-        while (timer.get() <= 2) {
-
-            Robot.driveTrain.drive(.5, .5);
-
-        }
-
-        timer.reset();
-
-        
-
-            
 
         }
        
@@ -71,7 +64,7 @@ public class DriveOffLine extends Command {
 
     @Override
     protected boolean isFinished() {
-       return timer.hasPeriodPassed(10);
+       return timer.hasPeriodPassed(5);
     }
 
 

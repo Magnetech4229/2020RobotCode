@@ -12,7 +12,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Add your docs here.
+ * Subsystem for the control panel manipulator wheel, uses VictorSPX controllers. 
+ * Also should include code for our color sensor.
  */
 public class ColorWheel extends Subsystem {
 

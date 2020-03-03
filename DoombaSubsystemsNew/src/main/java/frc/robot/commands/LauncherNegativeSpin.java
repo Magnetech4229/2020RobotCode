@@ -12,6 +12,7 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 /**
@@ -45,6 +46,7 @@ public class LauncherNegativeSpin extends Command {
     @Override
     protected void execute() {
         Robot.launcher.spinLauncher(-1);
+        SmartDashboard.putString("Shooter is: ", "FORWARD");
         Robot.oi.xbox.setRumble(RumbleType.kLeftRumble, 1);
     }
 
@@ -59,6 +61,8 @@ public class LauncherNegativeSpin extends Command {
     protected void end() {
         Robot.oi.xbox.setRumble(RumbleType.kLeftRumble, 0);
         Robot.launcher.spinLauncher(0);
+        SmartDashboard.putString("Shooter is: ", "OFF");
+
     }
 
     // Called when another command which requires one or more of the same

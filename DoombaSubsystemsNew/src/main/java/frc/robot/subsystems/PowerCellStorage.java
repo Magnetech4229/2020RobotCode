@@ -22,7 +22,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 
 /**
- *
+ * Power cell hopper subsystem, uses VictorSPX controllers.
  */
 public class PowerCellStorage extends Subsystem {
 

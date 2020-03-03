@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 /**
- *
+ *Runs the hopper motor in the negative direction at 50% power. This runs the hopper up.
  */
 public class StorageNegativeSpin extends Command {
 

@@ -22,7 +22,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 
 /**
- *
+ * Power cell intake subsystem. Uses VictorSPX controllers, contains methods to run the intake and move it up or down.
  */
 public class Intake extends Subsystem {
 

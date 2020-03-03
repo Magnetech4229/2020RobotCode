@@ -7,17 +7,20 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.TimedCommand;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
-/*
-*Command to spin the color wheel. Should eventually tie in color sensor code.
-*/
-
-public class ColorWheelSpin extends Command {
-  public ColorWheelSpin() {
-
-    requires(Robot.colorWheel);
+/**
+ * Timed command to run the launcher forward in autonomous. 
+ * Uses the same method as the teleop launcher commands.
+ */
+public class AutoShooterTimed extends TimedCommand {
+  /**
+   * Add your docs here.
+   */
+  public AutoShooterTimed(double timeout) {
+    super(timeout);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -30,25 +33,21 @@ public class ColorWheelSpin extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.colorWheel.spinWheel(0.6);
+    Robot.launcher.spinLauncher(-1);
+    SmartDashboard.putString("Shooter is: ", "FORWARD");
   }
 
-  // Make this return true when this Command no longer needs to run execute()
-  @Override
-  protected boolean isFinished() {
-    return false;
-  }
-
-  // Called once after isFinished returns true
+  // Called once after timeout
   @Override
   protected void end() {
-    Robot.colorWheel.spinWheel(0);
+    Robot.launcher.spinLauncher(0);
+    SmartDashboard.putString("Shooter is: ", "OFF");
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-      end();
+    end();
   }
 }

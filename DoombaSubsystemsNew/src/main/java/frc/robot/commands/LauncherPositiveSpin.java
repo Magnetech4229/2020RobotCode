@@ -11,6 +11,7 @@
 
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 /**
@@ -44,18 +45,19 @@ public class LauncherPositiveSpin extends Command {
     @Override
     protected void execute() {
         Robot.launcher.spinLauncher(0.3);
+        SmartDashboard.putString("Shooter is: ", "REVERSE");
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
-    protected boolean isFinished() {
-        return false;
+    protected boolean isFinished() {        return false;
     }
 
     // Called once after isFinished returns true
     @Override
     protected void end() {
         Robot.launcher.spinLauncher(0);
+        SmartDashboard.putString("Shooter is: ", "OFF");
     }
 
     // Called when another command which requires one or more of the same

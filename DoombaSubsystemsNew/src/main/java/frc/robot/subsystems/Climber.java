@@ -14,7 +14,7 @@ import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- * Add your docs here.
+ * Climber subsystem, uses VictorSPX controllers.
  */
 public class Climber extends Subsystem {
 private WPI_VictorSPX hookLiftMotor;

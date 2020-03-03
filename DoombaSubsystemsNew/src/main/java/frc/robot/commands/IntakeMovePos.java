@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 public class IntakeMovePos extends Command {
@@ -38,6 +39,7 @@ public class IntakeMovePos extends Command {
   @Override
   protected void end() {
     Robot.intake.moveIntake(0);
+
   }
 
   // Called when another command which requires one or more of the same

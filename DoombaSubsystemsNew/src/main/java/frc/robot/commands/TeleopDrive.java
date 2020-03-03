@@ -16,7 +16,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 /**
- *
+ * Basic drive code for the robot, uses the drivetrain.drive method defined in the DT subsystem with an xbox. 
+ * Drivetrain.drive takes two numbers between -1 and 1. Negative values drive forwards.
+ * Also creates encoders and puts them on SmartDashboard.
  */
 public class TeleopDrive extends Command {
 
