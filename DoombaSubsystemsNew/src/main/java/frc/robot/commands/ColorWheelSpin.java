@@ -7,7 +7,15 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.util.Color;
+
+import com.revrobotics.ColorSensorV3;
+import com.revrobotics.ColorSensorV3.RawColor;
+
 import frc.robot.Robot;
 
 /*
@@ -15,7 +23,22 @@ import frc.robot.Robot;
 */
 
 public class ColorWheelSpin extends Command {
+
+
+//RawColor seenColor;
+;
+
+
   public ColorWheelSpin() {
+
+    
+
+
+
+    
+    
+    
+    
 
     requires(Robot.colorWheel);
     // Use requires() here to declare subsystem dependencies
@@ -30,7 +53,14 @@ public class ColorWheelSpin extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.colorWheel.spinWheel(0.6);
+
+    
+
+    
+
+  Robot.colorWheel.spinWheel(1);
+
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()

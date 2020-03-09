@@ -11,6 +11,7 @@
 
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 /**
@@ -44,6 +45,7 @@ public class IntakeNegativeSpin extends Command {
     @Override
     protected void execute() {
         Robot.intake.spinIntake(-0.4);
+        SmartDashboard.putString("Intake is: ", "ON");
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -56,6 +58,7 @@ public class IntakeNegativeSpin extends Command {
     @Override
     protected void end() {
         Robot.intake.spinIntake(0);
+        SmartDashboard.putString("Intake is: ", "OFF");
     }
 
     // Called when another command which requires one or more of the same

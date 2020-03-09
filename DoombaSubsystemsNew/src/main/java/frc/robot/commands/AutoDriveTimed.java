@@ -33,7 +33,6 @@ public class AutoDriveTimed extends TimedCommand {
   @Override
   protected void execute() {
     Robot.driveTrain.drive(-.5, -.5);
-    SmartDashboard.putString("Auto Running:", "Auto Drive Timed");
   }
   
 

@@ -33,7 +33,6 @@ public class AutoHopperTimed extends TimedCommand {
   @Override
   protected void execute() {
     Robot.powerCellStorage.spinStorage(-.5);
-    SmartDashboard.putString("Auto Running:", "Auto Hopper Timed");
   }
 
   // Called once after timeout

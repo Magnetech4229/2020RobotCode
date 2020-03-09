@@ -52,14 +52,14 @@ public class TeleopDrive extends Command {
     @Override
     protected void execute() {
         Robot.driveTrain.drive(Robot.oi.xbox.getY(Hand.kLeft), Robot.oi.xbox.getY(Hand.kRight));
-        SmartDashboard.putNumber("Encoder Position - FL", Robot.driveTrain.frontLeftEncoder.getPosition());
-        SmartDashboard.putNumber("Speed - FL", Robot.driveTrain.frontLeftController.get());
-        SmartDashboard.putNumber("Encoder Position - FR", -Robot.driveTrain.frontRightEncoder.getPosition());
-        SmartDashboard.putNumber("Speed - FR", Robot.driveTrain.frontRightController.get());
-        SmartDashboard.putNumber("Encoder Position - BL", Robot.driveTrain.backLeftEncoder.getPosition());
-        SmartDashboard.putNumber("Speed - BL", Robot.driveTrain.backLeftController.get());
-        SmartDashboard.putNumber("Encoder Position - BR", -Robot.driveTrain.backRightEncoder.getPosition());
-        SmartDashboard.putNumber("Speed - BR", Robot.driveTrain.backRightController.get());
+        //SmartDashboard.putNumber("Encoder Position - FL", Robot.driveTrain.frontLeftEncoder.getPosition());
+        //SmartDashboard.putNumber("Speed - FL", Robot.driveTrain.frontLeftController.get());
+        //SmartDashboard.putNumber("Encoder Position - FR", -Robot.driveTrain.frontRightEncoder.getPosition());
+        //SmartDashboard.putNumber("Speed - FR", Robot.driveTrain.frontRightController.get());
+        //SmartDashboard.putNumber("Encoder Position - BL", Robot.driveTrain.backLeftEncoder.getPosition());
+        //SmartDashboard.putNumber("Speed - BL", Robot.driveTrain.backLeftController.get());
+        //SmartDashboard.putNumber("Encoder Position - BR", -Robot.driveTrain.backRightEncoder.getPosition());
+        //SmartDashboard.putNumber("Speed - BR", Robot.driveTrain.backRightController.get());
     }
     
 

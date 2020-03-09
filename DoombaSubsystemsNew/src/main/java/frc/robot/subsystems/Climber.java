@@ -25,6 +25,7 @@ private WPI_VictorSPX winchRightMotor;
   public Climber(){
     hookLiftMotor = new WPI_VictorSPX(12);
     winchLeftMotor = new WPI_VictorSPX(10);
+
     winchRightMotor = new WPI_VictorSPX(11);
 
   }

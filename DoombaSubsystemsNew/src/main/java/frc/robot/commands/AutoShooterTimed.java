@@ -33,15 +33,13 @@ public class AutoShooterTimed extends TimedCommand {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.launcher.spinLauncher(-1);
-    SmartDashboard.putString("Shooter is: ", "FORWARD");
+    Robot.launcher.spinLauncher(-0.9);
   }
 
   // Called once after timeout
   @Override
   protected void end() {
     Robot.launcher.spinLauncher(0);
-    SmartDashboard.putString("Shooter is: ", "OFF");
   }
 
   // Called when another command which requires one or more of the same

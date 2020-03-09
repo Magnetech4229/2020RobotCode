@@ -7,14 +7,20 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
 
-public class ClimbHookPos extends Command {
-  public ClimbHookPos() {
+/**
+ * Add your docs here.
+ */
+public class AutoWinchTimed extends TimedCommand {
+  /**
+   * Add your docs here.
+   */
+  public AutoWinchTimed(double timeout) {
+    super(timeout);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.climber);
   }
 
   // Called just before this Command runs the first time
@@ -25,20 +31,13 @@ public class ClimbHookPos extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.climber.liftClimber(Robot.oi.leftJoystick.getY() * 0.5);
-
+    Robot.intake.moveIntake(0.9);
   }
 
-  // Make this return true when this Command no longer needs to run execute()
-  @Override
-  protected boolean isFinished() {
-    return false;
-  }
-
-  // Called once after isFinished returns true
+  // Called once after timeout
   @Override
   protected void end() {
-    Robot.climber.liftClimber(0);
+    Robot.intake.moveIntake(0);
   }
 
   // Called when another command which requires one or more of the same

@@ -8,7 +8,9 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import com.revrobotics.ColorSensorV3;
 
+import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -18,9 +20,14 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class ColorWheel extends Subsystem {
 
 private WPI_VictorSPX wheelMotor;
+public static ColorSensorV3 colorSensor;
+
+
+
 
 
 public ColorWheel(){
+  
   wheelMotor = new WPI_VictorSPX(13);
 }
 

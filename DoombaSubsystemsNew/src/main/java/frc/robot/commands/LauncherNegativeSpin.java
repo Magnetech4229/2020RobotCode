@@ -45,7 +45,7 @@ public class LauncherNegativeSpin extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.launcher.spinLauncher(-1);
+        Robot.launcher.spinLauncher(-0.9);
         SmartDashboard.putString("Shooter is: ", "FORWARD");
         Robot.oi.xbox.setRumble(RumbleType.kLeftRumble, 1);
     }

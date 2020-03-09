@@ -7,14 +7,21 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
 
-public class ClimbHookNeg extends Command {
-  public ClimbHookNeg() {
+/**
+ * Add your docs here.
+ */
+public class AutoDelayTimed extends TimedCommand {
+  /**
+   * Add your docs here.
+   */
+  public AutoDelayTimed(double timeout) {
+    super(timeout);
+    requires(Robot.driveTrain);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-    requires(Robot.climber);
   }
 
   // Called just before this Command runs the first time
@@ -25,19 +32,13 @@ public class ClimbHookNeg extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.climber.liftClimber(-0.5);
+    Robot.driveTrain.drive(0, 0);
   }
 
-  // Make this return true when this Command no longer needs to run execute()
-  @Override
-  protected boolean isFinished() {
-    return false;
-  }
-
-  // Called once after isFinished returns true
+  // Called once after timeout
   @Override
   protected void end() {
-    Robot.climber.liftClimber(0);
+    Robot.driveTrain.drive(0, 0);
   }
 
   // Called when another command which requires one or more of the same
