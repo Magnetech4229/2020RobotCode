@@ -14,10 +14,12 @@ import frc.robot.Robot;
  * Timed driving command for autonomous. Drives forward at half power for a given time.
  */
 public class AutoDriveTimed extends TimedCommand {
+  private double leftSpeed;
+  private double rightSpeed;
   /**
    * Add your docs here.
    */
-  public AutoDriveTimed(double timeout) {
+  public AutoDriveTimed(double timeout, double leftSpeed, double rightSpeed) {
     super(timeout);
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -31,7 +33,7 @@ public class AutoDriveTimed extends TimedCommand {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.driveTrain.drive(-.5, -.5);
+    Robot.driveTrain.drive(leftSpeed, rightSpeed);
   }
   
 

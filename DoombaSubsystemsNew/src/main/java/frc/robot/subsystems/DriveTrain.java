@@ -70,7 +70,7 @@ public class DriveTrain extends Subsystem {
         backLeftController.setOpenLoopRampRate(0.5);
         
                 
-        leftMotors = new SpeedControllerGroup(frontLeftController, backLeftController  );
+        leftMotors = new SpeedControllerGroup(frontLeftController, backLeftController);
         addChild("LeftMotors",leftMotors);
 
                 
@@ -90,7 +90,7 @@ public class DriveTrain extends Subsystem {
         backRightController.setOpenLoopRampRate(0.5);
         
                 
-        rightMotors = new SpeedControllerGroup(frontRightController, backRightController  );
+        rightMotors = new SpeedControllerGroup(frontRightController, backRightController);
         addChild("RightMotors",rightMotors);
 
                 

@@ -21,7 +21,7 @@ public class BasicAutonomous extends CommandGroup {
     // addSequential(new Command2());
     // these will run in order.
 
-    addSequential(new AutoDriveTimed(1));
+    addSequential(new AutoDriveTimed(1 , -.5 , -.5));
 
     addSequential(new AutoShooterTimed(3));
     
@@ -30,7 +30,9 @@ public class BasicAutonomous extends CommandGroup {
     addSequential(new AutoHopperTimed(5));
     addSequential(new AutoWinchTimed(1.7));
 
-    
+
+    addSequential(new AutoDriveTimed(1.5, .5 , .5));
+    addSequential(new AutoDriveTimed(1, .7, -.7));
 
     // To run multiple commands at the same time,
     // use addParallel()
