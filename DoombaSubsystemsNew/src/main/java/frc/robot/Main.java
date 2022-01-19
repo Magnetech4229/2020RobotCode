@@ -9,11 +9,6 @@
 // it from being updated in the future.
 
 
-//Testing github desktop Jan 2022!
-//wegonemergethis
-//Testing merge problems?
-//lolmore
-
 package frc.robot;
 
 import edu.wpi.first.wpilibj.RobotBase;
