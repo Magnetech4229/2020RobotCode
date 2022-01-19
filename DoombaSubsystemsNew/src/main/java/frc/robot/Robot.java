@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-//test testy test
-
 package frc.robot;
 
 import edu.wpi.first.hal.FRCNetComm.tInstances;
